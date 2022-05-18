@@ -1,3 +1,3 @@
 # Dawm
-Ricardo Zaruma Game
+## Ricardo Zaruma Game
 Repositorio de Aplicaciones web y moviles
