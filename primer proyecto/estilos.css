@@ -1,0 +1,113 @@
+* , *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+}
+#cabecera{
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.topnav {
+    margin: 0 -5px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); 
+    padding: 10px;
+    overflow: hidden;
+    background-color: #294c60;
+}
+  
+.topnav a {
+    float: left;
+    color: #001B2E;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 2px 0 0 #ADB6C4, -2px 0 0 #ADB6C4, 0 2px 0 #ADB6C4, 0 -2px 0 #ADB6C4, 1px 1px #ADB6C4, -1px -1px 0 #ADB6C4, 1px -1px 0 #ADB6C4, -1px 1px 0 #ADB6C4;;
+}
+.topnav img{
+    float: right;
+    padding: 5px 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 1px ;
+}
+
+.row {margin: 0 -5px;}
+
+.card {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); 
+    border-style: solid;
+    border-color: #001B2E;
+    padding: 8px;
+    text-align: justify;
+    background-color: #FFC49B;
+}
+.column > #principal{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); 
+    padding: 8px;
+    text-align: justify;
+    background-color: #FFEFD3;
+
+}
+.subtitulo{
+    font-weight: bold;
+}
+.logo{
+    padding: 5px;
+    
+}
+.mapa{
+    overflow:hidden;
+    padding-bottom:55.25%;
+    position:relative;
+    border-style:solid;
+    border-color:#001B2E;
+}
+.mapa iframe{
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.card > #perfil{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 10px;
+    border-style:solid;
+    border-color:#001B2E;
+}
+
+.card > #info{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 2.5px;
+    right: 2.5px;
+    background: #001B2E;
+    height: auto;
+    width: auto;
+    padding-top: 40px;
+    color: #fff;
+}
