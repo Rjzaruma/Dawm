@@ -49,11 +49,12 @@ body{
 .row {margin: 0 -5px;}
 
 .card {
+    border-radius: 15px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); 
     border-style: solid;
     border-color: #001B2E;
     padding: 8px;
-    text-align: justify;
+    text-align:left;
     background-color: #FFC49B;
 }
 .column > #principal{
@@ -100,14 +101,57 @@ body{
     width: 100%;
 }
 
+li {
+    font-size:large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.parrafo{
+    font-size:large;
+    text-align: justify;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+table, th, td {
+    text-align: center;
+    border:2.5px solid black;
+    font-size: medium;
+    background-color: #ADB6C4;
+}
+#sugerencias{
+    margin:auto;
+    width: 60%;
+    margin-bottom: 6px;
+}
+
+#formulario{
+    background-color: #e77f35;
+}
+.sonido{
+   text-align: center;
+}
+h5{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10.5px;
+    margin-top: 10.5px;
+}
+form{
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
 footer{
     position: absolute;
     bottom: 0;
     left: 2.5px;
     right: 2.5px;
-    background: #001B2E;
+    background: #294c60;
     height: auto;
     width: auto;
     padding-top: 40px;
     color: #fff;
+    margin-top: 3.5px;
 }
