@@ -44,6 +44,7 @@ body{
     float: left;
     width: 33.33%;
     padding: 1px ;
+    margin-bottom: 15px;
 }
 
 .row {margin: 0 -5px;}
@@ -143,15 +144,17 @@ form{
     font-size: medium;
     font-weight: bold;
 }
-footer{
-    position: absolute;
+.footer {
+    font-weight: bold;
+    margin-top: 10px;
+    position: fixed;
+    left: 0;
     bottom: 0;
-    left: 2.5px;
-    right: 2.5px;
-    background: #294c60;
-    height: auto;
-    width: auto;
-    padding-top: 40px;
-    color: #fff;
-    margin-top: 3.5px;
+    width: 100%;
+    background-color: #294c60;
+    color: #001B2E;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 2px 0 0 #ADB6C4, -2px 0 0 #ADB6C4, 0 2px 0 #ADB6C4, 0 -2px 0 #ADB6C4, 1px 1px #ADB6C4, -1px -1px 0 #ADB6C4, 1px -1px 0 #ADB6C4, -1px 1px 0 #ADB6C4;;
+
 }
