@@ -1,42 +1,51 @@
 function filtrarGraficos(){
+  plantilla=""
+  document.querySelector('.cuerpo_grafico1').innerHTML = plantilla;
   region = document.getElementById("Regiones").value;
   //console.log(region)
-  inicio=201
-  fin_starter=0
-  final=201
-  if(region == "1"){
-    inicio=1
-    final=151
-  } 
-  if(region == "2"){
-    inicio=152
-    final=251   
-  }if(region == "3"){
-    inicio=252
-    final=386
-  }if(region == "4"){
-    inicio=387
-    final=494
-  }if(region == "5"){
-    inicio=495
-    final=649
-  }if(region == "6"){
-    inicio=650
-    final=721
+  if(region=="0"){
+    plantilla=""
+    document.querySelector('.cuerpo_grafico1').innerHTML = plantilla;
+  }else{
+    inicio=201
+    fin_starter=0
+    final=201
+    if(region == "1"){
+      inicio=1
+      final=151
+    } 
+    if(region == "2"){
+      inicio=152
+      final=251   
+    }if(region == "3"){
+      inicio=252
+      final=386
+    }if(region == "4"){
+      inicio=387
+      final=494
+    }if(region == "5"){
+      inicio=495
+      final=649
+    }if(region == "6"){
+      inicio=650
+      final=721
+    }
+    if(region == "7"){
+      inicio=722
+      final=809
+    }if(region == "8"){
+      inicio=810
+      final=898
+    }
+    cargarGraficos(inicio,final)
   }
-  if(region == "7"){
-    inicio=722
-    final=809
-  }if(region == "8"){
-    inicio=810
-    final=898
-  }
-  cargarGraficos(inicio,final)
+
 }
 
 
 function cargarGraficos(inicio,final){  
   plantilla=""
+  document.querySelector('.cuerpo_grafico1').innerHTML = plantilla;
   document.querySelector('.cuerpo_grafico2').innerHTML = plantilla;
   water=0
   fire=0
@@ -50,52 +59,78 @@ function cargarGraficos(inicio,final){
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
     .then(response => response.json())
     .then(data => {
-      tipo=data.types[0].type.name
-      for(elem in tipo){
-        tip=tipo[elem]
-        if(tipo=="water"){
-          water++
-        }if(tipo=="fire"){
-          fire++
-        }if(tipo=="rock"){
-          rock++
-        }if(tipo=="electric"){
-          electric++
-        }if(tipo=="dragon"){
-          dragon++
-        }if(tipo=="fairy"){
-          fairy++
-        }if(tipo=="normal"){
-          normal++
-        }if(tipo=="grass"){
-          grass++
+      tipos=data.types
+      if(tipos.length>1){
+        for(elem in tipo){
+          tipo=data.types[elem].type.name
+          if(tipo=="water"){
+            water++
+          }if(tipo=="fire"){
+            fire++
+          }if(tipo=="rock"){
+            rock++
+          }if(tipo=="electric"){
+            electric++
+          }if(tipo=="dragon"){
+            dragon++
+          }if(tipo=="fairy"){
+            fairy++
+          }if(tipo=="normal"){
+            normal++
+          }if(tipo=="grass"){
+            grass++
+          }
+        }
+      }else{
+        tipo=data.types[0].type.name
+        for(elem in tipo){
+          if(tipo=="water"){
+            water++
+          }if(tipo=="fire"){
+            fire++
+          }if(tipo=="rock"){
+            rock++
+          }if(tipo=="electric"){
+            electric++
+          }if(tipo=="dragon"){
+            dragon++
+          }if(tipo=="fairy"){
+            fairy++
+          }if(tipo=="normal"){
+            normal++
+          }if(tipo=="grass"){
+            grass++
+          }
         }
       }
+      //tipo=data.types[0].type.name
+      //console.log(tipo)
+      
       plantilla=`<tr>
       <th scope="row"> Agua </th>
-      <td style="--size: ${water}/${100}; --color:aqua"> <span class="data"> ${water} </span> </td>
+      <td style="--size: ${water}/${final-inicio}; --color:aqua"> <span class="data"> ${water} </span> </td>
       </tr>
       <tr>
       <th scope="row"> Fuego </th>
-      <td style="--size: ${fire}/${100}; --color:red"> <span class="data"> ${fire} </span> </td>
+      <td style="--size: ${fire}/${final-inicio}; --color:red"> <span class="data"> ${fire} </span> </td>
       </tr>
       <th scope="row"> Roca </th>
-      <td style="--size: ${rock}/${100}; --color:brown"> <span class="data"> ${rock} </span> </td>
+      <td style="--size: ${rock}/${final-inicio}; --color:brown"> <span class="data"> ${rock} </span> </td>
       </tr>
       <th scope="row"> Electrico </th>
-      <td style="--size: ${electric}/${100}; --color:yellow"> <span class="data"> ${electric} </span> </td>
+      <td style="--size: ${electric}/${final-inicio}; --color:yellow"> <span class="data"> ${electric} </span> </td>
       </tr>
       <th scope="row"> Planta </th>
-      <td style="--size: ${grass}/${100}; --color:green"> <span class="data"> ${grass} </span> </td>
+      <td style="--size: ${grass}/${final-inicio}; --color:green"> <span class="data"> ${grass} </span> </td>
       </tr>
       <th scope="row"> Normal </th>
-      <td style="--size: ${normal}/${100}; --color:grey"> <span class="data"> ${normal} </span> </td>
+      <td style="--size: ${normal}/${final-inicio}; --color:grey"> <span class="data"> ${normal} </span> </td>
       </tr>
       <th scope="row"> Dragon </th>
-      <td style="--size: ${dragon}/${100}; --color:blue"> <span class="data"> ${dragon} </span> </td>
+      <td style="--size: ${dragon}/${final-inicio}; --color:blue"> <span class="data"> ${dragon} </span> </td>
       </tr>
       <th scope="row"> Hada </th>
-      <td style="--size: ${fairy}/${100}; --color:pink"> <span class="data"> ${fairy} </span> </td>
+      <td style="--size: ${fairy}/${final-inicio}; --color:pink"> <span class="data"> ${fairy} </span> </td>
       </tr>
         `
       document.querySelector('.cuerpo_grafico1').innerHTML = plantilla;
@@ -183,6 +218,7 @@ function sprites(){
     fetch(`https://pokeapi.co/api/v2/pokemon/${d}/`)
       .then(response => response.json())
       .then(data => {
+        
         hp=data.stats[0].base_stat
         attack=data.stats[1].base_stat
         defense=data.stats[2].base_stat
