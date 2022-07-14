@@ -27,18 +27,23 @@ function filtrarGraficos(){
   if(region == "7"){
     inicio=722
     final=809
+  }if(region == "8"){
+    inicio=810
+    final=898
   }
   cargarGraficos(inicio,final)
 }
 
 
 function cargarGraficos(inicio,final){  
+  plantilla=""
+  document.querySelector('.cuerpo_grafico2').innerHTML = plantilla;
   water=0
   fire=0
-  ground=0
+  rock=0
   electric=0
   grass=0
-  flying=0
+  normal=0
   dragon=0
   fairy=0
   for(let i=inicio; i<=final; i++){
@@ -52,16 +57,16 @@ function cargarGraficos(inicio,final){
           water++
         }if(tipo=="fire"){
           fire++
-        }if(tipo=="ground"){
-          ground++
+        }if(tipo=="rock"){
+          rock++
         }if(tipo=="electric"){
           electric++
         }if(tipo=="dragon"){
           dragon++
         }if(tipo=="fairy"){
           fairy++
-        }if(tipo=="flying"){
-          flying++
+        }if(tipo=="normal"){
+          normal++
         }if(tipo=="grass"){
           grass++
         }
@@ -74,8 +79,8 @@ function cargarGraficos(inicio,final){
       <th scope="row"> Fuego </th>
       <td style="--size: ${fire}/${100}; --color:red"> <span class="data"> ${fire} </span> </td>
       </tr>
-      <th scope="row"> Tierra </th>
-      <td style="--size: ${ground}/${100}; --color:brown"> <span class="data"> ${ground} </span> </td>
+      <th scope="row"> Roca </th>
+      <td style="--size: ${rock}/${100}; --color:brown"> <span class="data"> ${rock} </span> </td>
       </tr>
       <th scope="row"> Electrico </th>
       <td style="--size: ${electric}/${100}; --color:yellow"> <span class="data"> ${electric} </span> </td>
@@ -83,8 +88,8 @@ function cargarGraficos(inicio,final){
       <th scope="row"> Planta </th>
       <td style="--size: ${grass}/${100}; --color:green"> <span class="data"> ${grass} </span> </td>
       </tr>
-      <th scope="row"> Volador </th>
-      <td style="--size: ${flying}/${100}; --color:orange"> <span class="data"> ${flying} </span> </td>
+      <th scope="row"> Normal </th>
+      <td style="--size: ${normal}/${100}; --color:grey"> <span class="data"> ${normal} </span> </td>
       </tr>
       <th scope="row"> Dragon </th>
       <td style="--size: ${dragon}/${100}; --color:blue"> <span class="data"> ${dragon} </span> </td>
@@ -145,7 +150,7 @@ function starters(id){
   let nom = `<option selected><p class="fs-5s">Escoga su Starter</p> </option>`;
   document.querySelector('#Starters').innerHTML = nom;
   let selector_foto=document.getElementById('foto')
-  selector_foto.src=``
+  selector_foto.src=`logo.jpg`
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then(response => response.json())
       .then(data => {
@@ -172,16 +177,54 @@ function starters(id){
       .catch(console.error);
 }
 function sprites(){
+  
   d = document.getElementById("Starters").value;
     //console.log(d)
     fetch(`https://pokeapi.co/api/v2/pokemon/${d}/`)
       .then(response => response.json())
       .then(data => {
-        
+        hp=data.stats[0].base_stat
+        attack=data.stats[1].base_stat
+        defense=data.stats[2].base_stat
+        special_attack=data.stats[3].base_stat
+        special_defense=data.stats[4].base_stat
+        speed=data.stats[5].base_stat
+        tipo=data.types[0].type.name
+        color=""
+        if(tipo=="grass"){
+          color="green"
+        }if(tipo=="fire"){
+          color="red"
+        }if(tipo=="water"){
+          color="aqua"
+        }
+        console.log(tipo)
         sprite=data.sprites.front_default
         //alert(tipo)
         let selector_foto=document.getElementById('foto')
-        selector_foto.src=`${sprite}`
+        plantilla=`<tr>
+        <th scope="row"> HP </th>
+        <td style="--size: ${hp}/${100}; --color:${color}"> <span class="data"> ${hp} </span> </td>
+        </tr>
+        <tr>
+        <th scope="row"> ATK </th>
+        <td style="--size: ${attack}/${100}; --color:${color}"> <span class="data"> ${attack} </span> </td>
+        </tr>
+        <th scope="row"> S.ATK </th>
+        <td style="--size: ${special_attack}/${100}; --color:${color}"> <span class="data"> ${special_attack} </span> </td>
+        </tr>
+        <th scope="row"> DEF </th>
+        <td style="--size: ${defense}/${100}; --color:${color}"> <span class="data"> ${defense} </span> </td>
+        </tr>
+        <th scope="row"> S.DEF </th>
+        <td style="--size: ${special_defense}/${100}; --color:${color}"> <span class="data"> ${special_defense} </span> </td>
+        </tr>
+        <th scope="row"> SPD </th>
+        <td style="--size: ${speed}/${100}; --color:${color}"> <span class="data"> ${speed} </span> </td>
+        </tr>
+        `
+      document.querySelector('.cuerpo_grafico2').innerHTML = plantilla;
+      selector_foto.src=`${sprite}`
 
     })
     .catch(console.error);
@@ -286,6 +329,20 @@ function RangoPokemons(){
       inicio=722
       fin_starter=inicio+8
       final=752
+      for(let i=inicio; i<=fin_starter; i++){
+        id_starters.push(i)
+        
+
+      }
+      starters(id_starters[0]);
+      starters(id_starters[3]);
+      starters(id_starters[6]);
+    }
+    if(region == "8"){
+      id_starters=[]
+      inicio=810
+      fin_starter=inicio+8
+      final=840
       for(let i=inicio; i<=fin_starter; i++){
         id_starters.push(i)
         

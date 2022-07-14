@@ -24,10 +24,6 @@
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Información General</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Analytics</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Reports</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -61,6 +57,7 @@
                                     <option value="5">Unova</option>
                                     <option value="6">Kalos</option>
                                     <option value="7">Alola</option>
+                                    <option value="8">Galar</option>
                                 </select>
                             </div>
                         </div>
@@ -74,7 +71,7 @@
                                         <option selected><p class="fs-5s">Escoga su Starter</p> </option>
                                     </select>
                                 </div>
-                                <img src="" alt="Foto Starter" id="foto">
+                                <img src="logo.jpg" alt="Foto Starter" id="foto">
                                 <div><p class="fs-5" id="starter_tipos"></p></div>
                             </div>
                         
@@ -95,16 +92,20 @@
                                     <tbody class="cuerpo_grafico1 mt-5" id="cuerpo_grafico1">
                                       
                                     </tbody>        
-                                  </table>
+                                </table>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
                         <div class="box p-4 bg-white rounded">
-                            <div class="h-50" id="my-chart">
-                                <h1>One</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum perferendis har</p>
+                            <div class="h-100" id="my-chart">
+                                <table class="charts-css column data-spacing-5 show-labels" id="my-chart">
+                                    <h1 class="mb-5">Estadisticas Starters </h1>
+                                    <tbody class="cuerpo_grafico2 mt-5" id="cuerpo_grafico2">
+                                        
+                                    </tbody>        
+                                </table>
                                
                             </div>
                         </div>
