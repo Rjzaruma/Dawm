@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecursoService } from './servicios/recurso.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sitioAngular';
+  constructor(private recursoService: RecursoService) { }
+
 }

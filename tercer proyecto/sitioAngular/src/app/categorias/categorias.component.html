@@ -21,10 +21,15 @@
     <div class="body">
         <div class="row v-align justify-content-center">
             <div class="col-12">
+                <mat-card class="noticia-card col-3 m-2" *ngFor="let pelicula of data">
+                    <mat-card-title>{{pelicula.descripcion}}</mat-card-title>
+                    
+                </mat-card>
+            
                 <mat-list role="list" class="lista">
-                    <mat-list-item role="listitem" class="next">
+                    <mat-list-item role="listitem" class="next" >
                         <p>Fase 1</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/peliculas">
+                        <button mat-mini-fab color="warn" value="1" class="next" onclick="valor(this)">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>
@@ -55,3 +60,8 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </div>
+<script>
+    function valor(t){
+        console.log(t.value)
+    }
+</script>
