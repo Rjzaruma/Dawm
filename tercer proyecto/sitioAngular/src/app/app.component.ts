@@ -8,6 +8,6 @@ import { RecursoService } from './servicios/recurso.service';
 })
 export class AppComponent {
   title = 'sitioAngular';
-  constructor(private recursoService: RecursoService) { }
+  constructor() { }
 
 }

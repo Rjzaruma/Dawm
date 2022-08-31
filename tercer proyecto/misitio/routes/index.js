@@ -9,7 +9,7 @@ var models = initModels(sequelize);
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/peliculas', function(req, res, next) {
   models.peliculas.findAll({
  })
   .then(peliculas => {
@@ -18,6 +18,34 @@ router.get('/', function(req, res, next) {
 .catch(error => res.status(400).send(error))
 });
 
+router.get('/peliculas/:id', function(req, res, next) {
+  models.peliculas.findOne({
+    where: { 
+      id_p: parseInt(req.params.id)
+    }
+  })
+  .then(cliente => {  
+      res.json( cliente );  
+  })  
+  .catch(error => res.status(400).send(error))
+});
+
+router.get('/peliculas/fase/:id', function(req, res, next) {
+  models.peliculas.findAll({
+    where: { 
+      fase: parseInt(req.params.id)
+    }
+  })
+  .then(cliente => {  
+      res.json( cliente );  
+  })  
+  .catch(error => res.status(400).send(error))
+});
+
+
+
+
+
 router.get('/actores', function(req, res, next) {
   models.actores.findAll({
  })
@@ -25,6 +53,18 @@ router.get('/actores', function(req, res, next) {
    res.json(actores)
 })
 .catch(error => res.status(400).send(error))
+});
+
+router.get('/actores/:id', function(req, res, next) {
+  models.actores.findAll({
+    where: { 
+      pelicula: parseInt(req.params.id)
+    }
+  })
+  .then(cliente => {  
+      res.json( cliente );  
+  })  
+  .catch(error => res.status(400).send(error))
 });
 
 module.exports = router;

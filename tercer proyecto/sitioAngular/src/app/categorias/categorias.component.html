@@ -21,33 +21,33 @@
     <div class="body">
         <div class="row v-align justify-content-center">
             <div class="col-12">
+                <!--
                 <mat-card class="noticia-card col-3 m-2" *ngFor="let pelicula of data">
                     <mat-card-title>{{pelicula.descripcion}}</mat-card-title>
-                    
                 </mat-card>
-            
+                -->
                 <mat-list role="list" class="lista">
                     <mat-list-item role="listitem" class="next" >
                         <p>Fase 1</p>
-                        <button mat-mini-fab color="warn" value="1" class="next" onclick="valor(this)">
+                        <button mat-mini-fab color="warn" value="1" class="next" (click)="send(1)" routerLink="/peliculas">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>
                     <mat-list-item role="listitem">
                         <p>Fase 2</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/peliculas">
+                        <button mat-mini-fab color="warn" class="next" (click)="send(2)" routerLink="/peliculas">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>
                     <mat-list-item role="listitem">
                         <p>Fase 3</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/peliculas">
+                        <button mat-mini-fab color="warn" class="next" (click)="send(3)" routerLink="/peliculas">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>
                     <mat-list-item role="listitem">
-                        <p>Favoritas</p>
-                        <button mat-mini-fab color="warn" class="nextf" routerLink="/favoritas">
+                        <p>Fase 4</p>
+                        <button mat-mini-fab color="warn" class="next" (click)="send(4)" routerLink="/peliculas">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pelicula } from '../interfaz/peliculas';
-import { Peliculas } from '../interfaz/peliculas';
 import { RecursoService } from '../servicios/recurso.service';
+
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
@@ -13,14 +12,10 @@ export class CategoriasComponent implements OnInit {
   constructor(private recursoService: RecursoService) { }
 
   ngOnInit(): void {
-    this.recursoService.obtenerPeliculas().subscribe(respuesta => {
-      this.data = respuesta as Pelicula
-      console.log(this.data)
-
-
-
-
-    })
   }
+  send(value: any) {
+    this.recursoService.emit<string>(value);
+  }
+
 
 }

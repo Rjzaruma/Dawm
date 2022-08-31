@@ -23,6 +23,7 @@ mat-list-item .next {
 
 
 mat-list-item {
+
     border: 1px solid #ffffff;
     background-color: #000000;
     margin-top: 10px;
@@ -33,7 +34,7 @@ mat-list-item {
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
-    font-size: x-large;
+    font-size: small;
 
 }
 
