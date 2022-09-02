@@ -20,7 +20,11 @@ export class RecursoService {
   obtenerPeliculasPorFase(fase: string) {
     return this.http.get('http://localhost:3000/peliculas/fase/' + fase)
   }
-  obtenerPeliculasPorId(fase: string) {
-    return this.http.get('http://localhost:3000/peliculas/' + fase)
+  obtenerPeliculasPorId(id: string) {
+    return this.http.get('http://localhost:3000/peliculas/' + id)
   }
+  obtenerActoresPorId(movie: string) {
+    return this.http.get('http://localhost:3000/actores/' + movie)
+  }
+
 }

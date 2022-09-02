@@ -43,9 +43,6 @@ router.get('/peliculas/fase/:id', function(req, res, next) {
 });
 
 
-
-
-
 router.get('/actores', function(req, res, next) {
   models.actores.findAll({
  })

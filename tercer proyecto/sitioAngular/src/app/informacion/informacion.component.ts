@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from '../interfaz/peliculas';
-
+import { Actor } from '../interfaz/actores';
 import { RecursoService } from '../servicios/recurso.service';
 
 @Component({
@@ -10,13 +10,16 @@ import { RecursoService } from '../servicios/recurso.service';
 })
 export class InformacionComponent implements OnInit {
   public id = ""
+  actores: any = []
   data: any = []
   constructor(private recursoService: RecursoService) { }
 
   ngOnInit(): void {
+
     this.recursoService.on<string>().subscribe(
       data => {
         this.id = data;
+        
       }
     )
 
@@ -25,9 +28,12 @@ export class InformacionComponent implements OnInit {
       console.log(this.data)
     })
 
+    this.recursoService.obtenerActoresPorId(this.id).subscribe(respuesta => {
+      this.actores = respuesta as Actor
+    })
 
   }
-
+  
 
 
 }

@@ -10,6 +10,7 @@ import { RecursoService } from '../servicios/recurso.service';
 })
 export class PeliculasComponent implements OnInit {
   public fase = "";
+  public actores="";
   data: any = []
   constructor(private recursoService: RecursoService) { }
 
@@ -24,6 +25,7 @@ export class PeliculasComponent implements OnInit {
       this.data = respuesta as Pelicula
       //console.log(this.data)
     })
+    
   }
   send(value: any) {
     this.recursoService.emit<string>(value);
