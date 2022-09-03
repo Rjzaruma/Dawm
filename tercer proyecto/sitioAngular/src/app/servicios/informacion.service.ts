@@ -18,7 +18,10 @@ export class InformacionService {
   constructor(private http: HttpClient) { }
   /*OBTENER INFORMACION POR ID*/
 
-  obtenerPeliculasPorId(fase: string) {
-    return this.http.get('http://localhost:3000/peliculas/' + fase)
+  obtenerNoRelacional() {
+    return this.http.get('https://ratings-b9a49-default-rtdb.firebaseio.com/collection.json')
+  }
+  obtenerPeliculas() {
+    return this.http.get('http://localhost:3000/peliculas')
   }
 }

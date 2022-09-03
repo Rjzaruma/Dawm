@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    MatTableModule,
     MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,

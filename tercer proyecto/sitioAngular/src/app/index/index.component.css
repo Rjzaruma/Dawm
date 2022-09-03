@@ -8,20 +8,15 @@
 .full {
     min-height: 100vh;
 }
-
-
-
 .v-align {
     padding: 5vh 0;
     justify-content: center;
     text-align: center;
 }
-
 .imagen {
     text-align: center;
     justify-content: center;
 }
-
 .titulo,
 .sub {
     font-size: xx-large;
@@ -31,11 +26,6 @@
 
 }
 
-form {
-    padding-left: 35px;
-    padding-top: 20px;
-    text-align: start;
-}
 
 
 
@@ -46,16 +36,38 @@ form {
     padding-top: 10px;
 }
 
-.form-group {
-    padding-right: 15%;
-    padding-top: 5px;
-    text-align: center;
-    justify-content: center;
-
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
 }
 
-.login {
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.filtros{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5%;
+    border: 5px solid #000000;
+    background: rgb(223, 221, 221);
+    background: linear-gradient(0deg, rgb(223, 221, 221) 0%, rgb(223, 221, 221) 100%);
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.inicio {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
     border: 3px solid #000000;
     background: rgb(223, 221, 221);
     background: linear-gradient(0deg, rgb(223, 221, 221) 0%, rgb(223, 221, 221) 100%);
@@ -63,3 +75,5 @@ form {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+  

@@ -11,23 +11,34 @@
 
     <div class="row v-align justify-content-center">
         <div class="col-12">
-            <mat-card class="login">
-                <mat-card-header class="sub"> Hola! </mat-card-header>
-                <mat-card-header class="sub"> Bienvenido </mat-card-header>
-
-                <form>
-                    <div class="form-group">
-                        <input type="text" name="usuario" class="form-control" placeholder="Usuario">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="pass" class="form-control" placeholder="Contrasena">
-                    </div>
+            <mat-card class="filtros">
+                <div class="col-6">
+                    <select  class="form-control" id="choices">
+                        <option disabled>Seleccione un Rating</option>
+                        <option *ngFor="let rank of set">{{rank}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
                     <div class="boton">
-                        <button mat-raised-button color="primary" routerLink="/categorias">Entrar</button>
-
+                        <button mat-raised-button color="primary" routerLink="/categorias">Categorias</button>
                     </div>
-                </form>
-
+                </div>
+            </mat-card>
+            <mat-card class="inicio">
+                <table class="my-4">
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Rating</th>
+                    <th>Duracion</th>
+                    <th>Fase</th>
+                    <tr *ngFor="let pelicula of data">
+                        <th>{{pelicula.id_p}}</th>
+                        <th>{{pelicula.titulo}}</th>
+                        <th>{{pelicula.rating}} /10</th>
+                        <th>{{pelicula.duracion}} min</th>
+                        <th>{{pelicula.fase}}</th>
+                    </tr>
+                </table>
             </mat-card>
         </div>
     </div>
@@ -36,3 +47,9 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </div>
+<script>
+    var y = document.getElementById('choices');
+    y.addEventListener('change', function(){
+      console.log(y.value)
+    });
+</script>
