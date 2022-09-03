@@ -24,4 +24,7 @@ export class InformacionService {
   obtenerPeliculas() {
     return this.http.get('http://localhost:3000/peliculas')
   }
+  obtenerPeliculasPorRate(rate:string){
+    return this.http.get('http://localhost:3000/peliculas/rate/'+rate)
+  }
 }

@@ -12,10 +12,13 @@
     <div class="row v-align justify-content-center">
         <div class="col-12">
             <mat-card class="filtros">
-                <div class="col-6">
-                    <select  class="form-control" id="choices">
-                        <option disabled>Seleccione un Rating</option>
-                        <option *ngFor="let rank of set">{{rank}}</option>
+                <div class="col-2">
+                    Rating:
+                </div>
+                <div class="col-4 mx-2">
+                    <select  class="form-control" id="choices" (change)="ChangeRank($event)">
+                        <option disabled>--</option>
+                        <option *ngFor="let rank of set" [value]="rank">{{rank}}</option>
                     </select>
                 </div>
                 <div class="col-4">
@@ -26,13 +29,11 @@
             </mat-card>
             <mat-card class="inicio">
                 <table class="my-4">
-                    <th>Id</th>
                     <th>Titulo</th>
                     <th>Rating</th>
                     <th>Duracion</th>
                     <th>Fase</th>
                     <tr *ngFor="let pelicula of data">
-                        <th>{{pelicula.id_p}}</th>
                         <th>{{pelicula.titulo}}</th>
                         <th>{{pelicula.rating}} /10</th>
                         <th>{{pelicula.duracion}} min</th>
@@ -47,9 +48,3 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </div>
-<script>
-    var y = document.getElementById('choices');
-    y.addEventListener('change', function(){
-      console.log(y.value)
-    });
-</script>

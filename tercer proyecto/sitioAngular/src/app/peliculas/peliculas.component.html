@@ -25,7 +25,7 @@
                 <mat-list role="list" class="lista">
                     <mat-list-item role="listitem" class="next" *ngFor="let pelicula of data">
                         <p>{{pelicula.titulo}}</p>
-                        <button mat-mini-fab col or="warn" class="next" (click)="send(pelicula.id_p)" routerLink="/informacion">
+                        <button mat-mini-fab color="warn" class="next" (click)="send(pelicula.id_p)" routerLink="/informacion">
                             <mat-icon>arrow_forward_ios</mat-icon>
                         </button>
                     </mat-list-item>

@@ -42,6 +42,17 @@ router.get('/peliculas/fase/:id', function(req, res, next) {
   .catch(error => res.status(400).send(error))
 });
 
+router.get('/peliculas/rate/:id', function(req, res, next) {
+  models.peliculas.findAll({
+    where: { 
+      rating: parseInt(req.params.id)
+    }
+  })
+  .then(cliente => {  
+      res.json( cliente );  
+  })  
+  .catch(error => res.status(400).send(error))
+});
 
 router.get('/actores', function(req, res, next) {
   models.actores.findAll({
@@ -51,6 +62,7 @@ router.get('/actores', function(req, res, next) {
 })
 .catch(error => res.status(400).send(error))
 });
+
 
 router.get('/actores/:id', function(req, res, next) {
   models.actores.findAll({

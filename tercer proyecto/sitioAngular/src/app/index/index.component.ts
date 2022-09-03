@@ -14,8 +14,18 @@ export class IndexComponent implements OnInit {
   data: any = []
   ratio: any = []
   set: any = new Set();
-  
-  constructor(private informacionService: InformacionService) { }
+  SelectedValue:any;
+  ChangeRank(e:any){
+    console.log(e.target.value)
+    this.SelectedValue=e.target.value
+    this.informacionService.obtenerPeliculasPorRate(this.SelectedValue).subscribe(respuesta => {
+      this.data = respuesta as Pelicula
+      //console.log(this.data)
+    })
+  }
+  constructor(private informacionService: InformacionService) {
+    
+   }
 
   ngOnInit(): void {
 
