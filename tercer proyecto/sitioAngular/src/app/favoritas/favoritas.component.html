@@ -7,13 +7,13 @@
     <mat-toolbar color="primary">
         <mat-toolbar-row class="header1">
             <div class="example-button-container">
-                <button mat-mini-fab color="warn" routerLink="/categorias">
+                <button mat-mini-fab color="warn" routerLink="/index">
                     <mat-icon>arrow_back_ios</mat-icon>
                 </button>
             </div>
         </mat-toolbar-row>
         <mat-toolbar-row class="header">
-            <span>Favoritas</span>
+            <span>Métodos del API Rest</span>
         </mat-toolbar-row>
     </mat-toolbar>
 
@@ -21,38 +21,16 @@
     <div class="body">
         <div class="row v-align justify-content-center">
             <div class="col-12">
-                <mat-list role="list" class="lista">
-                    <mat-list-item role="listitem" class="next">
-                        <p>Pelicula 1</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/informacion">
-                            <mat-icon>arrow_forward_ios</mat-icon>
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <p>Pelicula 2</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/informacion">
-                            <mat-icon>arrow_forward_ios</mat-icon>
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <p>Pelicula 3</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/informacion">
-                            <mat-icon>arrow_forward_ios</mat-icon>
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <p>Pelicula 4</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/informacion">
-                            <mat-icon>arrow_forward_ios</mat-icon>
-                        </button>
-                    </mat-list-item>
-                    <mat-list-item role="listitem">
-                        <p>Pelicula 5</p>
-                        <button mat-mini-fab color="warn" class="next" routerLink="/informacion">
-                            <mat-icon>arrow_forward_ios</mat-icon>
-                        </button>
-                    </mat-list-item>
-                </mat-list>
+                <mat-card class="descripción">
+                    <img src="assets/imagenes/rest.png "  height="800">
+                </mat-card> 
+                <mat-card class="descripción my-2">
+                    Se utilizó GET para recuperar información de la base de datos. Posteriormente se definio diferentes parametros para filtrar la información.
+                    <td></td>
+                    Entre ellos findAll() utilizado para traer todos los registros de las tablas y los que cumplieran ciertas condiciones como misma fase o rating.
+                    <td></td>
+                    Por otro lado findOne() fue utilizado para traer la informacion específica de una pelicula y poder enlazarla con la tabla de actores. 
+                </mat-card>
             </div>
         </div>
     </div>

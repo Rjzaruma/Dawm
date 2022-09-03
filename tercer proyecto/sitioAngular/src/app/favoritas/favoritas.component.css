@@ -75,3 +75,16 @@ p {
 .example-spacer {
     flex: 1 1 auto;
 }
+.descripcion{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    border: 5px solid #000000;
+    background: rgb(223, 221, 221);
+    background: linear-gradient(0deg, rgb(223, 221, 221) 0%, rgb(223, 221, 221) 100%);
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

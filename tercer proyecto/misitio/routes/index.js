@@ -5,10 +5,8 @@ var initModels = require("../models/init-models");
 const peliculas = require('../models/peliculas.js');
 const actores = require('../models/actores.js');
 var models = initModels(sequelize);  
-
-
-
 /* GET home page. */
+
 router.get('/peliculas', function(req, res, next) {
   models.peliculas.findAll({
  })
@@ -17,7 +15,6 @@ router.get('/peliculas', function(req, res, next) {
 })
 .catch(error => res.status(400).send(error))
 });
-
 router.get('/peliculas/:id', function(req, res, next) {
   models.peliculas.findOne({
     where: { 
@@ -29,7 +26,6 @@ router.get('/peliculas/:id', function(req, res, next) {
   })  
   .catch(error => res.status(400).send(error))
 });
-
 router.get('/peliculas/fase/:id', function(req, res, next) {
   models.peliculas.findAll({
     where: { 
@@ -41,7 +37,6 @@ router.get('/peliculas/fase/:id', function(req, res, next) {
   })  
   .catch(error => res.status(400).send(error))
 });
-
 router.get('/peliculas/rate/:id', function(req, res, next) {
   models.peliculas.findAll({
     where: { 
@@ -53,7 +48,6 @@ router.get('/peliculas/rate/:id', function(req, res, next) {
   })  
   .catch(error => res.status(400).send(error))
 });
-
 router.get('/actores', function(req, res, next) {
   models.actores.findAll({
  })
@@ -62,8 +56,6 @@ router.get('/actores', function(req, res, next) {
 })
 .catch(error => res.status(400).send(error))
 });
-
-
 router.get('/actores/:id', function(req, res, next) {
   models.actores.findAll({
     where: { 

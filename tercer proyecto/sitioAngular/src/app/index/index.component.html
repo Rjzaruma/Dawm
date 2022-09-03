@@ -15,20 +15,28 @@
                 <div class="col-2">
                     Rating:
                 </div>
-                <div class="col-4 mx-2">
+                <div class="col-2 mx-2">
                     <select  class="form-control" id="choices" (change)="ChangeRank($event)">
                         <option disabled>--</option>
                         <option *ngFor="let rank of set" [value]="rank">{{rank}}</option>
                     </select>
                 </div>
-                <div class="col-4">
+                
+            </mat-card>
+            <mat-card class="filtros">
+                <div class="col-4 mx-3">
                     <div class="boton">
                         <button mat-raised-button color="primary" routerLink="/categorias">Categorias</button>
                     </div>
                 </div>
+                <div class="col-4 mx-3">
+                    <div class="boton">
+                        <button mat-raised-button color="accent" routerLink="/favoritas">Api REST</button>
+                    </div>
+                </div>
             </mat-card>
-            <mat-card class="inicio">
-                <table class="my-4">
+            <mat-card class="inicio my-2">
+                <table class="my-3">
                     <th>Titulo</th>
                     <th>Rating</th>
                     <th>Duracion</th>
