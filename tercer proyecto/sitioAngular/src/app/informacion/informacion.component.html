@@ -27,7 +27,7 @@
             <mat-card>
                 <mat-card-content class="caracteristicas">
                     Titulo: {{data.titulo}} <td></td>
-                    Actores Principales: <a *ngFor="let actor of actores">{{actor.nombre}}/ </a>
+                    Actores Principales: <table *ngFor="let actor of actores"><td>{{actor.nombre}} como {{actor.personaje}} </td></table>
                     <td></td>
                     Duración: {{data.duracion}} min<td></td>
                     Rating: {{data.rating}}/10<td></td>
